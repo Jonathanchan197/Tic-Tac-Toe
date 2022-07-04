@@ -1,0 +1,35 @@
+.board {
+    background-image: url(/Users/joqool/PROJECTS/project-0/images/board.png);
+    background-size: cover;
+    width: 550px;
+    height: 550px;
+    margin: 0 auto;
+    /* background-color: blue; */
+}
+.tile {
+    /* background-color: goldenrod; */
+    width: 150px;
+    height: 150px;
+    margin: 0.95em;
+    display: inline-block;
+}
+
+.cross {
+    background-image: url(/Users/joqool/PROJECTS/project-0/images/cross.png);
+    background-repeat: no-repeat;
+    background-size: 95%;
+    background-position: 0.3em;
+}
+
+.circle {
+    background-image: url(/Users/joqool/PROJECTS/project-0/images/circle.png);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: 1em;
+}
+
+.win {
+    background-image: url(/Users/joqool/PROJECTS/project-0/images/win.gif);
+    background-repeat: no-repeat;
+    background-size: 150%;
+}
