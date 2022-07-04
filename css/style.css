@@ -15,21 +15,21 @@
 }
 
 .cross {
-    background-image: url(/Users/joqool/PROJECTS/project-0/images/cross.png);
+    background-image: url(../images/cross.png);
     background-repeat: no-repeat;
     background-size: 95%;
     background-position: 0.3em;
 }
 
 .circle {
-    background-image: url(/Users/joqool/PROJECTS/project-0/images/circle.png);
+    background-image: url(../images/circle.png);
     background-repeat: no-repeat;
     background-size: 80%;
     background-position: 1em;
 }
 
 .win {
-    background-image: url(/Users/joqool/PROJECTS/project-0/images/win.gif);
+    background-image: url(../images/win.gif);
     background-repeat: no-repeat;
     background-size: 150%;
 }
