@@ -1,8 +1,6 @@
 //all the math shit will be here
 //store player choices .. empty array I guess that checks whos turn it is
 //even turns will be cross, odd turns will be circle
-
-
 //determines whos turn it is with a counter
 let gameOver = false;
 let playerWin = false;

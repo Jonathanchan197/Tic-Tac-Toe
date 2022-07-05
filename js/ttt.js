@@ -14,7 +14,7 @@ $(document).ready(function () {
         characterLock();
     });
 
-    $('#reset').click(function() {
+    $('#reset').click(function () {
         resetGame();
     });
 });
