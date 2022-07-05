@@ -1,35 +1,132 @@
-.board {
-    background-image: url(/Users/joqool/PROJECTS/project-0/images/board.png);
-    background-size: cover;
-    width: 550px;
-    height: 550px;
-    margin: 0 auto;
-    /* background-color: blue; */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+header {
+    font-size: 500%;
+    text-align: center;
 }
-.tile {
-    /* background-color: goldenrod; */
-    width: 150px;
-    height: 150px;
-    margin: 0.95em;
+body {
+    font-family: 'Bebas Neue', cursive;
+    font-size: smaller;
+}
+footer {
+    font-size: 500%;
+    text-align: center;
+}
+
+.wrapper {
+    width: 950px;
+    margin: 0 auto;
+}
+.board {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    border: 0.75em solid #7b8da0;
+    border-radius: 2em;
+    display: grid;
+    grid-template: repeat(3, 1fr)/repeat(3, 1fr);
+}
+
+.sidepanel {
+    width: 950px;
+    height: 250px;
     display: inline-block;
+    text-align: center;
+    font-size: 200%;
+}
+
+.player {
+    width: 250px;
+    height: 200px;
+    display: inline-block;
+    margin-top: 0;
+}
+
+.player img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tile {
+    display: flex;
+    align-items: center;
+    border: 0.5em solid #7b8da0;
 }
 
 .cross {
-    background-image: url(../images/cross.png);
     background-repeat: no-repeat;
-    background-size: 95%;
-    background-position: 0.3em;
+    background-size: 70%;
+    background-position: center;
 }
 
 .circle {
-    background-image: url(../images/circle.png);
     background-repeat: no-repeat;
-    background-size: 80%;
-    background-position: 1em;
+    background-size: 70%;
+    background-position: center;
 }
 
-.win {
-    background-image: url(../images/win.gif);
-    background-repeat: no-repeat;
-    background-size: 150%;
+.whale {
+    background-image: url(../images/whale.png);
+}
+
+.panda {
+    background-image: url(../images/panda.png);
+}
+
+.frog {
+    background-image: url(../images/frog.png);
+}
+
+.elephant {
+    background-image: url(../images/elephant.png);
+}
+
+.octopus {
+    background-image: url(../images/octopus.png);
+}
+
+img {
+    width: 200px;
+    height: auto;
+}
+
+div.character img {
+    width: 100px;
+    height: auto;
+}
+
+.tally {
+    width: 50px;
+    height: auto;
+}
+
+#scoreboard {
+    width: 500px;
+    height: 125px;
+    display: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#character-selection {
+    width: 800px;
+    height: 200px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: x-large;
+}
+
+.character {
+    width: 140px;
+    height: 140px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.hide {
+    display: none;
 }

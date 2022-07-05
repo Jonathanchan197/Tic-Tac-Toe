@@ -4,38 +4,51 @@
 
 
 //determines whos turn it is with a counter
+let gameOver= false;
+let playerWin = false;
+let gameStart = false;
 let turn = [];
+let characterTurn = 0;
+let playerList = [
+    player1 =  {wins: 0, character: ''},
+    player2 =  {wins: 0, character: ''}
+];
 
 const playerTurn = function (tileChoice) {
-    if (!gameOver){
-    turn += '1'
+    if (!gameOver && !$(tileChoice).hasClass('cross')&& !$(tileChoice).hasClass('circle') && gameStart){
+        turn += '1';
     if (turn.length%2===0) {
-    $(tileChoice).addClass('circle')
+        $(tileChoice).addClass('circle');
+        $(tileChoice).addClass(playerList[1].character);
     } else {
-    $(tileChoice).addClass('cross')
+        $(tileChoice).addClass('cross');
+        $(tileChoice).addClass(playerList[0].character);
     }
-}
+    }
 };
-
 
 const crossWin = function ()  {
     if(!gameOver) {
-    $('h1').append('Cross wins!');
-    gameOver = true;
-    $('body').addClass('win')
+        playerList[0].wins += 1;
+        $('h2').append('<img class="tally" src="../project-0/images/1win.png">')
+        gameOver = true;
     }
 };
 
 const circleWin = function ()  {
     if(!gameOver) {
-    $('h1').append('Circle wins!');
-    gameOver = true;
-    $('body').addClass('win')
+        playerList[1].wins += 1;
+        $('h2').append('<img class="tally" src="../project-0/images/2win.png">')
+        gameOver = true;
     }
 };
 
-let gameOver= false;
-
+const tie = function () {
+    if(!gameOver) {
+        $('h2').append('<img class="tally" src="../project-0/images/tie.png">')
+        gameOver = true;
+    }
+};
 
 const checkWin = function () {
     //cross
@@ -85,5 +98,51 @@ const checkWin = function () {
         circleWin();
     }if ($('div#top-right').hasClass('circle') && $('div#center-middle').hasClass('circle') && $('div#bottom-left').hasClass('circle') ) {
         circleWin();
+    }
+    //tie
+    if (turn.length===9) {
+        tie();
+    }
+};
+
+const softReset = function () {
+    if (gameOver && !playerWin) {
+        $('.tile').removeClass(`cross circle ${playerList[0].character} ${playerList[1].character}`);
+        turn = [];
+        gameOver = false;
+    } 
+};
+
+const checkGame = function () {
+    if(!playerWin){
+        if (playerList[0].wins === 2) {
+            $('footer').append('<br> Player 1 wins')
+            playerWin = true;
+        } else if (playerList[1].wins === 2) {
+            $('footer').append('<br> Player 2 wins')
+            playerWin = true;
+        }
+    }
+};
+
+const changeCharacter = function (characterChoice) {
+    if (characterTurn===0) {
+        characterTurn += 1;
+        playerList[0].character = characterChoice;
+        $(`div#${characterChoice}`).hide();
+        $("div#p1").append(`<img src="../project-0/images/${characterChoice}.png">`);
+    } else if (characterTurn===1) {
+        characterTurn += 1;
+        playerList[1].character = characterChoice;
+        $("div#p2").append(`<img src="../project-0/images/${characterChoice}.png">`);
+        gameStart = true;
+    }
+};
+
+const characterLock = function () {
+    if (characterTurn===2) {
+        $('#character-selection').hide();
+        $('#scoreboard').show();
+        $('div.board').removeClass('hide');
     }
 };

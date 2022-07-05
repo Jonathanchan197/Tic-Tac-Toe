@@ -11,7 +11,15 @@
     <script src="js/logic.js"></script>
 </head>
 <body>
-    <div class="board">
+    <div class="wrapper">
+    <header>Tic Tac Toe</header>
+    <div id="scoreboard">
+        <h1>Scoreboard</h1>
+        <h2 id="player-score"></h2>
+        <h1 id="win"></h1>
+    </div>
+    <footer></footer>
+    <div class="board hide">
         <div id="top-left" class="tile"></div>
         <div id="top-middle" class="tile"></div>
         <div id="top-right" class="tile"></div>
@@ -21,7 +29,33 @@
         <div id="bottom-left" class="tile"></div>
         <div id="bottom-middle" class="tile"></div>
         <div id="bottom-right" class="tile"></div>
-        <h1></h1>
     </div>
+    <div id="character-selection">
+        <h3>Pick a character!</h3>
+        <div id="whale" class="character">
+            <img id="whale"  src="../project-0/images/whale.png" alt="whale">
+        </div>
+        <div id="panda" class="character">
+            <img id="panda" src="../project-0/images/panda.png" alt="panda">
+        </div>
+        <div id="frog" class="character">
+            <img id="frog" src="../project-0/images/frog.png" alt="frog">
+        </div>
+        <div id="elephant" class="character">
+            <img id="elephant" src="../project-0/images/elephant.png" alt="elephant">
+        </div>
+        <div id="octopus" class="character">
+            <img id="octopus" src="../project-0/images/octopus.png" alt="octopus">
+        </div>
+    </div>
+    <div class="sidepanel">
+        <div id='p1' class="player">
+            <h3>Player 1</h3>
+        </div>
+        <div id='p2' class="player">
+            <h3>Player 2</h3>
+    </div>
+</div>
+</div>
 </body>
 </html>
