@@ -144,5 +144,6 @@ const characterLock = function () {
         $('#character-selection').hide();
         $('#scoreboard').show();
         $('div.board').removeClass('hide');
+        $('header').hide();
     }
 };
