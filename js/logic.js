@@ -4,103 +4,103 @@
 
 
 //determines whos turn it is with a counter
-let gameOver= false;
+let gameOver = false;
 let playerWin = false;
 let gameStart = false;
 let turn = [];
 let characterTurn = 0;
 let playerList = [
-    player1 =  {wins: 0, character: ''},
-    player2 =  {wins: 0, character: ''}
+    player1 = { wins: 0, character: '' },
+    player2 = { wins: 0, character: '' }
 ];
 
 const playerTurn = function (tileChoice) {
-    if (!gameOver && !$(tileChoice).hasClass('cross')&& !$(tileChoice).hasClass('circle') && gameStart){
+    if (!gameOver && !$(tileChoice).hasClass('cross') && !$(tileChoice).hasClass('circle') && gameStart) {
         turn += '1';
-    if (turn.length%2===0) {
-        $(tileChoice).addClass('circle');
-        $(tileChoice).addClass(playerList[1].character);
-    } else {
-        $(tileChoice).addClass('cross');
-        $(tileChoice).addClass(playerList[0].character);
-    }
+        if (turn.length % 2 === 0) {
+            $(tileChoice).addClass('circle');
+            $(tileChoice).addClass(playerList[1].character);
+        } else {
+            $(tileChoice).addClass('cross');
+            $(tileChoice).addClass(playerList[0].character);
+        }
     }
 };
 
-const crossWin = function ()  {
-    if(!gameOver) {
+const crossWin = function () {
+    if (!gameOver) {
         playerList[0].wins += 1;
-        $('h2').append('<img class="tally" src="../project-0/images/1win.png">')
+        $('h2').append('<img class="tally" src="./images/1win.png">')
         gameOver = true;
     }
 };
 
-const circleWin = function ()  {
-    if(!gameOver) {
+const circleWin = function () {
+    if (!gameOver) {
         playerList[1].wins += 1;
-        $('h2').append('<img class="tally" src="../project-0/images/2win.png">')
+        $('h2').append('<img class="tally" src="./images/2win.png">')
         gameOver = true;
     }
 };
 
 const tie = function () {
-    if(!gameOver) {
-        $('h2').append('<img class="tally" src="../project-0/images/tie.png">')
+    if (!gameOver) {
+        $('h2').append('<img class="tally" src="./images/tie.png">')
         gameOver = true;
     }
 };
 
 const checkWin = function () {
     //cross
-    if ($('div#top-left').hasClass('cross') && $('div#top-middle').hasClass('cross') && $('div#top-right').hasClass('cross') ) {
+    if ($('div#top-left').hasClass('cross') && $('div#top-middle').hasClass('cross') && $('div#top-right').hasClass('cross')) {
         crossWin();
     }
-    if ($('div#center-left').hasClass('cross') && $('div#center-middle').hasClass('cross') && $('div#center-right').hasClass('cross') ) {
+    if ($('div#center-left').hasClass('cross') && $('div#center-middle').hasClass('cross') && $('div#center-right').hasClass('cross')) {
         crossWin();
     }
-    if ($('div#bottom-left').hasClass('cross') && $('div#bottom-middle').hasClass('cross') && $('div#bottom-right').hasClass('cross') ) {
+    if ($('div#bottom-left').hasClass('cross') && $('div#bottom-middle').hasClass('cross') && $('div#bottom-right').hasClass('cross')) {
         crossWin();
     }
-    if ($('div#top-left').hasClass('cross') && $('div#center-left').hasClass('cross') && $('div#bottom-left').hasClass('cross') ) {
+    if ($('div#top-left').hasClass('cross') && $('div#center-left').hasClass('cross') && $('div#bottom-left').hasClass('cross')) {
         crossWin();
     }
-    if ($('div#top-middle').hasClass('cross') && $('div#center-middle').hasClass('cross') && $('div#bottom-middle').hasClass('cross') ) {
+    if ($('div#top-middle').hasClass('cross') && $('div#center-middle').hasClass('cross') && $('div#bottom-middle').hasClass('cross')) {
         crossWin();
     }
-    if ($('div#top-right').hasClass('cross') && $('div#center-right').hasClass('cross') && $('div#bottom-right').hasClass('cross') ) {
+    if ($('div#top-right').hasClass('cross') && $('div#center-right').hasClass('cross') && $('div#bottom-right').hasClass('cross')) {
         crossWin();
     }
-    if ($('div#top-left').hasClass('cross') && $('div#center-middle').hasClass('cross') && $('div#bottom-right').hasClass('cross') ) {
+    if ($('div#top-left').hasClass('cross') && $('div#center-middle').hasClass('cross') && $('div#bottom-right').hasClass('cross')) {
         crossWin();
-    }if ($('div#top-right').hasClass('cross') && $('div#center-middle').hasClass('cross') && $('div#bottom-left').hasClass('cross') ) {
+    } if ($('div#top-right').hasClass('cross') && $('div#center-middle').hasClass('cross') && $('div#bottom-left').hasClass('cross')) {
         crossWin();
     }
     //circle
-    if ($('div#top-left').hasClass('circle') && $('div#top-middle').hasClass('circle') && $('div#top-right').hasClass('circle') ) {
+    if ($('div#top-left').hasClass('circle') && $('div#top-middle').hasClass('circle') && $('div#top-right').hasClass('circle')) {
         circleWin();
     }
-    if ($('div#center-left').hasClass('circle') && $('div#center-middle').hasClass('circle') && $('div#center-right').hasClass('circle') ) {
+    if ($('div#center-left').hasClass('circle') && $('div#center-middle').hasClass('circle') && $('div#center-right').hasClass('circle')) {
         circleWin();
     }
-    if ($('div#bottom-left').hasClass('circle') && $('div#bottom-middle').hasClass('circle') && $('div#bottom-right').hasClass('circle') ) {
+    if ($('div#bottom-left').hasClass('circle') && $('div#bottom-middle').hasClass('circle') && $('div#bottom-right').hasClass('circle')) {
         circleWin();
     }
-    if ($('div#top-left').hasClass('circle') && $('div#center-left').hasClass('circle') && $('div#bottom-left').hasClass('circle') ) {
+    if ($('div#top-left').hasClass('circle') && $('div#center-left').hasClass('circle') && $('div#bottom-left').hasClass('circle')) {
         circleWin();
     }
-    if ($('div#top-middle').hasClass('circle') && $('div#center-middle').hasClass('circle') && $('div#bottom-middle').hasClass('circle') ) {
+    if ($('div#top-middle').hasClass('circle') && $('div#center-middle').hasClass('circle') && $('div#bottom-middle').hasClass('circle')) {
         circleWin();
     }
-    if ($('div#top-right').hasClass('circle') && $('div#center-right').hasClass('circle') && $('div#bottom-right').hasClass('circle') ) {
+    if ($('div#top-right').hasClass('circle') && $('div#center-right').hasClass('circle') && $('div#bottom-right').hasClass('circle')) {
         circleWin();
     }
-    if ($('div#top-left').hasClass('circle') && $('div#center-middle').hasClass('circle') && $('div#bottom-right').hasClass('circle') ) {
+    if ($('div#top-left').hasClass('circle') && $('div#center-middle').hasClass('circle') && $('div#bottom-right').hasClass('circle')) {
         circleWin();
-    }if ($('div#top-right').hasClass('circle') && $('div#center-middle').hasClass('circle') && $('div#bottom-left').hasClass('circle') ) {
+    } if ($('div#top-right').hasClass('circle') && $('div#center-middle').hasClass('circle') && $('div#bottom-left').hasClass('circle')) {
         circleWin();
     }
     //tie
-    if (turn.length===9) {
+    if (turn.length === 9) {
         tie();
     }
 };
@@ -110,11 +110,11 @@ const softReset = function () {
         $('.tile').removeClass(`cross circle ${playerList[0].character} ${playerList[1].character}`);
         turn = [];
         gameOver = false;
-    } 
+    }
 };
 
 const checkGame = function () {
-    if(!playerWin){
+    if (!playerWin) {
         if (playerList[0].wins === 2) {
             $('footer').append('<br> Player 1 wins')
             playerWin = true;
@@ -126,21 +126,21 @@ const checkGame = function () {
 };
 
 const changeCharacter = function (characterChoice) {
-    if (characterTurn===0) {
+    if (characterTurn === 0) {
         characterTurn += 1;
         playerList[0].character = characterChoice;
         $(`div#${characterChoice}`).hide();
-        $("div#p1").append(`<img src="../project-0/images/${characterChoice}.png">`);
-    } else if (characterTurn===1) {
+        $("div#p1").append(`<img src="./images/${characterChoice}.png">`);
+    } else if (characterTurn === 1) {
         characterTurn += 1;
         playerList[1].character = characterChoice;
-        $("div#p2").append(`<img src="../project-0/images/${characterChoice}.png">`);
+        $("div#p2").append(`<img src="./images/${characterChoice}.png">`);
         gameStart = true;
     }
 };
 
 const characterLock = function () {
-    if (characterTurn===2) {
+    if (characterTurn === 2) {
         $('#character-selection').hide();
         $('#scoreboard').show();
         $('div.board').removeClass('hide');

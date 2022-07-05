@@ -1,6 +1,6 @@
 //all the dom related shit will be here
-$(document).ready(function() {
-    $('.tile').click(function() {
+$(document).ready(function () {
+    $('.tile').click(function () {
         const tileChoice = $(this)
         playerTurn(tileChoice);
         checkWin();

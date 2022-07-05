@@ -2,15 +2,17 @@
 
 
 header {
-    font-size: 500%;
+    font-size: 300%;
     text-align: center;
 }
+
 body {
     font-family: 'Bebas Neue', cursive;
     font-size: smaller;
 }
+
 footer {
-    font-size: 500%;
+    font-size: 300%;
     text-align: center;
 }
 
@@ -18,6 +20,7 @@ footer {
     width: 950px;
     margin: 0 auto;
 }
+
 .board {
     width: 600px;
     height: 600px;
