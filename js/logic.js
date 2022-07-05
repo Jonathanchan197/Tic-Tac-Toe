@@ -20,9 +20,11 @@ const playerTurn = function (tileChoice) {
         if (turn.length % 2 === 0) {
             $(tileChoice).addClass('circle');
             $(tileChoice).addClass(playerList[1].character);
+            $('h3#whosTurn').html(`Player 1's turn`);
         } else {
             $(tileChoice).addClass('cross');
             $(tileChoice).addClass(playerList[0].character);
+            $('h3#whosTurn').html(`Player 2's turn`);
         }
     }
 };
@@ -30,7 +32,7 @@ const playerTurn = function (tileChoice) {
 const crossWin = function () {
     if (!gameOver) {
         playerList[0].wins += 1;
-        $('h2').append('<img class="tally" src="./images/1win.png">')
+        $('h3#scoreboard').append('<img class="tally" src="./images/1win.png">')
         gameOver = true;
     }
 };
@@ -38,14 +40,14 @@ const crossWin = function () {
 const circleWin = function () {
     if (!gameOver) {
         playerList[1].wins += 1;
-        $('h2').append('<img class="tally" src="./images/2win.png">')
+        $('h3#scoreboard').append('<img class="tally" src="./images/2win.png">')
         gameOver = true;
     }
 };
 
 const tie = function () {
     if (!gameOver) {
-        $('h2').append('<img class="tally" src="./images/tie.png">')
+        $('h3#scoreboard').append('<img class="tally" src="./images/tie.png">')
         gameOver = true;
     }
 };
@@ -116,10 +118,10 @@ const softReset = function () {
 const checkGame = function () {
     if (!playerWin) {
         if (playerList[0].wins === 2) {
-            $('footer').append('<br> Player 1 wins')
+            $('div.winner').prepend('<h2>Player 1 wins</h2>').show();
             playerWin = true;
         } else if (playerList[1].wins === 2) {
-            $('footer').append('<br> Player 2 wins')
+            $('div.winner').prepend('<h2>Player 2 wins</h2>').show();
             playerWin = true;
         }
     }
@@ -142,8 +144,11 @@ const changeCharacter = function (characterChoice) {
 const characterLock = function () {
     if (characterTurn === 2) {
         $('#character-selection').hide();
-        $('#scoreboard').show();
         $('div.board').removeClass('hide');
-        $('header').hide();
+        $('div#p3').removeClass('hide')
     }
+};
+
+const resetGame = function () {
+    window.location.reload();
 };

@@ -13,43 +13,29 @@
 </head>
 
 <body>
+    <header>Tic Tac Toe</header>
+    <div id="character-selection">
+        <h3>Pick a character!</h3>
+        <div id="whale" class="character">
+            <img id="whale" src="./images/whale.png" alt="whale">
+        </div>
+        <div id="panda" class="character">
+            <img id="panda" src="./images/panda.png" alt="panda">
+        </div>
+        <div id="frog" class="character">
+            <img id="frog" src="./images/frog.png" alt="frog">
+        </div>
+        <div id="elephant" class="character">
+            <img id="elephant" src="./images/elephant.png" alt="elephant">
+        </div>
+        <div id="octopus" class="character">
+            <img id="octopus" src="./images/octopus.png" alt="octopus">
+        </div>
+    </div>
+    <div class="winner hide">
+    </div>
+    </div>
     <div class="wrapper">
-        <header>Tic Tac Toe</header>
-        <div id="scoreboard">
-            <h1>Scoreboard</h1>
-            <h2 id="player-score"></h2>
-            <h1 id="win"></h1>
-        </div>
-        <footer></footer>
-        <div class="board hide">
-            <div id="top-left" class="tile"></div>
-            <div id="top-middle" class="tile"></div>
-            <div id="top-right" class="tile"></div>
-            <div id="center-left" class="tile"></div>
-            <div id="center-middle" class="tile"></div>
-            <div id="center-right" class="tile"></div>
-            <div id="bottom-left" class="tile"></div>
-            <div id="bottom-middle" class="tile"></div>
-            <div id="bottom-right" class="tile"></div>
-        </div>
-        <div id="character-selection">
-            <h3>Pick a character!</h3>
-            <div id="whale" class="character">
-                <img id="whale" src="./images/whale.png" alt="whale">
-            </div>
-            <div id="panda" class="character">
-                <img id="panda" src="./images/panda.png" alt="panda">
-            </div>
-            <div id="frog" class="character">
-                <img id="frog" src="./images/frog.png" alt="frog">
-            </div>
-            <div id="elephant" class="character">
-                <img id="elephant" src="./images/elephant.png" alt="elephant">
-            </div>
-            <div id="octopus" class="character">
-                <img id="octopus" src="./images/octopus.png" alt="octopus">
-            </div>
-        </div>
         <div class="sidepanel">
             <div id='p1' class="player">
                 <h3>Player 1</h3>
@@ -58,7 +44,29 @@
                 <h3>Player 2</h3>
             </div>
         </div>
-    </div>
+        <div class="boardcontainer">
+            <div class="board hide">
+                <div id="top-left" class="tile"></div>
+                <div id="top-middle" class="tile"></div>
+                <div id="top-right" class="tile"></div>
+                <div id="center-left" class="tile"></div>
+                <div id="center-middle" class="tile"></div>
+                <div id="center-right" class="tile"></div>
+                <div id="bottom-left" class="tile"></div>
+                <div id="bottom-middle" class="tile"></div>
+                <div id="bottom-right" class="tile"></div>
+            </div>
+        </div>
+        <div class="sidepanel">
+            <div id="p3" class="player hide">
+                <h3 id="scoreboard">Scoreboard: </h3>
+            </div>
+            <div id="p3" class="player hide">
+                <h3 id="whosTurn">Player 1's turn</h3>
+            </div>
+            <div id="p3" class="player hide">
+                <button id="reset" class="button-54" role="button">Reset Game</button>
+            </div>
+        </div>
 </body>
-
 </html>

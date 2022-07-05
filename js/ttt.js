@@ -13,4 +13,8 @@ $(document).ready(function () {
         changeCharacter(characterChoice);
         characterLock();
     });
+
+    $('#reset').click(function() {
+        resetGame();
+    });
 });
