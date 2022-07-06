@@ -109,6 +109,7 @@ const softReset = function () {
     if (gameOver && !playerWin) {
         $('.tile').removeClass(`cross circle ${playerList[0].character} ${playerList[1].character}`);
         turn = [];
+        $('h3#whosTurn').html(`Player 1's turn`);
         gameOver = false;
     }
 };
