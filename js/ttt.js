@@ -1,5 +1,5 @@
-//all the dom related shit will be here
 $(document).ready(function () {
+    //places token on board
     $('.tile').click(function () {
         const tileChoice = $(this)
         playerTurn(tileChoice);
@@ -8,12 +8,14 @@ $(document).ready(function () {
         softReset();
     });
 
+    //saves the users character choice
     $('.character img').click(function () {
         const characterChoice = $(this).attr('id')
         changeCharacter(characterChoice);
         characterLock();
     });
 
+    //resets the game
     $('#reset').click(function () {
         resetGame();
     });
