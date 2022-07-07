@@ -21,8 +21,15 @@ body {
     font-size: x-large;
 }
 
+.character:hover {
+    width: 130px;
+    height: 100px;
+    background-color: gold;
+    border-radius: 2em;
+}
+
 .character {
-    width: 140px;
+    width: 130px;
     height: 140px;
     vertical-align: top;
     display: inline-block;
