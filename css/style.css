@@ -79,6 +79,10 @@ div.character img {
     border: 0.5em solid #7b8da0;
 }
 
+.tile:hover {
+    background-color: lightgray;
+}
+
 .sidepanel {
     height: auto;
     display: inline-block;
