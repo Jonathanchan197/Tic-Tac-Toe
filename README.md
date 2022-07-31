@@ -30,6 +30,6 @@
 ![homepage](/images/home.png)
 ![board](/images/board.png)
 
-##Acknowledgements
-- All icons are taken from ![flaticon](https://www.flaticon.com/)
+## Acknowledgements
+- All icons are taken from [flaticon](https://www.flaticon.com/)
 ![whale](https://cdn-icons-png.flaticon.com/512/1864/1864475.png)
